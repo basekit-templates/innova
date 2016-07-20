@@ -41,10 +41,10 @@
             "letter-spacing": "0px"
         },
         "font3": {
-            "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "22px",
-            "font-weight": "400",
-            "line-height": "32px",
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "26px",
+            "font-weight": "300",
+            "line-height": "38px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
