@@ -77,13 +77,13 @@
          },
         "font7": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
-            "font-size": "16px",
+            "font-size": "18px",
             "font-weight": "400",
-            "line-height": "26px",
-            "color": "@color-swatch1",
+            "line-height": "28px",
+            "color": "@color-swatch5",
             "letter-spacing": "0px",
-            "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3,10%)"
+            "background-color": "@color-swatch1",
+            "background-color-hover":  "@color-swatch1"
         },
         "font8": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
@@ -201,9 +201,10 @@
             "color__socialicons--icon": "@color-swatch1"
         },
         "button": {
-            "color__button--background": "@color-swatch3",
-            "color__button--background--hover": "lighten(@color-swatch3, 20%)",
+            "color__button--background": "@font-swatch7-background-color",
+            "color__button--background--hover": "@font-swatch7-background-color-hover",
             "color__button--text": "@font-swatch7-color",
+            "color__button--border": "@color-swatch2",
 
             "font__button--font-family": "@font-swatch7-font-family",
             "font__button--font-size": "@font-swatch7-font-size",
@@ -222,7 +223,8 @@
         },
         "blog": {
             "color__blogpostlist-article--background": "transparent",
-            "color__blogpostlist-title--text": "@color__h2--text"
+            "color__blogpostlist-title--text": "@color__h2--text",
+            "@color__blogpost-title--text": "@color-swatch4"
         },
         "ecommerce": {
             "color__ecomproduct-title--text": "@font-swatch1-color",

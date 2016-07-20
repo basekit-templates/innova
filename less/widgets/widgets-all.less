@@ -275,13 +275,14 @@ input, textarea, button, .button {
 //  #STANDARD
 //  --------------
 
-button,
 .button {
     .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
     line-height: @font__button--line-height;
 
+    border: 2px solid fade(@color__button--border, 50%);
+
     &:hover {
-        background-color: @contrast-color;
+        border: 2px solid @color__button--border;
     }
 
     &:focus {
