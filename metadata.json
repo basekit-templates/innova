@@ -13,7 +13,7 @@
     "colorSwatches":
     {
         "Swatch 1": {
-            "color1":"#ffffff",
+            "color1":"#f2f2f2",
             "color2":"#00052E",
             "color3":"#00052E",
             "color4":"#00052E",
@@ -217,9 +217,8 @@
             "color__slideshow-description--text": "@color-swatch1"
         },
         "gallery": {
-            "color__gallery-caption--background": "fade(@color-swatch2,30%)",
-            "color__gallery-title--text": "@color-swatch1",
-            "color__gallery-description--text": "@color-swatch1"
+            "color__gallery-title--text": "@color-swatch4",
+            "color__gallery-description--text": "@color-swatch5"
         },
         "blog": {
             "color__blogpostlist-article--background": "transparent",

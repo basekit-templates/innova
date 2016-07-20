@@ -11,20 +11,19 @@
 
 //  3.   #Images
 //  4.   #Gallery
-//  5.   #Slideshow
 
-//  6.   #Buttons
+//  5.   #Buttons
 
-//  7.   #Forms
+//  6.   #Forms
 
-// 8.   #Social Icons
-// 9.   #Twitter Feed
+// 7.   #Social Icons
+// 8.   #Twitter Feed
 
-// 10.   #Divider
-// 11.   #Yelp
-// 12.   #Messages
-// 13.   #Linkedin
-// 14.   #Blockquote
+// 9.   #Divider
+// 10.   #Yelp
+// 11.   #Messages
+// 12.   #Linkedin
+// 13.   #Blockquote
 
 
 
@@ -112,7 +111,7 @@
 
 // Title
 .image-title {
-    font-size: @font__h2--font-size;
+    font-family: @font__h3--font-family;
 }
 
 .imagewidget {
@@ -131,415 +130,139 @@
 // -----------------------------
 
 
-// Gallery 3 Column Layout
-// -----------------------
-
-// Title and description colour
-.image-title,
-.image-description {
-    color: @color-swatch1;
-}
-
-
+// Gallery 2 column layout
 // Gallery list container
 .gallery-list {
-    .flex;
+
+    .flex-display;
     .flex-wrap(wrap);
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    .justify-content(space-between);
+
 }
 
-
-// Gallery Items
-// -----------------------
-
+// Gallery items
 .gallery .gallery-item {
     position: relative;
-    width: 32%;
-    margin-bottom: 20px;
-    z-index: 0; // Stops gallery from being visible when nav is open
-    overflow: hidden;
+    padding: 1px;
 
+    -webkit-flex: 1 1 50%;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
     // Display 100% at mobile
-    @media @bp-mobile {
+    @media @mobile {
         width: 100%;
-        margin-bottom: 20px;
     }
 }
-
 
 // Gallery item links
 .gallery .image-link {
     display: block;
-    padding-top: 100%; // Should keep gallery perfectly square at any size.
+    height: 400px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    // Adds slight black tint to image so the text is more readble
-    &:after {
-        content: "";
-        background-color: fade(@color-swatch7, 15%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        height: 100%;
-        width: 100%;
+    @media @tablet {
+        height: 300px;
+    }
+    @media @mobile {
+        height: 200px;
     }
 }
-
 
 // Gallery hide img element (uses background cover technique)
 .gallery .image {
     display: none;
 }
 
-
-// Gallery Caption
-// -----------------------
-
-.gallery .caption {
-    display: none;
-    margin: 0;
-    padding: 20px;
-    background-color: hsla(hue(@color-swatch7), saturation(@color-swatch7), lightness(@color-swatch7), 0.8);
-}
-
-
-a.gallery__caption-link:hover {
-    text-decoration: none;
-}
-
-
-// Gallery show caption on hover
-.gallery .figure:hover .caption {
-    position: absolute;
-    bottom: 0;
+// Hide Caption
+.gallery__caption {
     display: block;
-    width: 100%;
-}
-
-
-
-
-// Gallery Caption
-// --------------------
-
-.gallery .caption,
-.gallery .figure:hover .caption {
-    background-color: transparent !important;
-    padding: 20px 20px 20px 0 !important;
-    display: block;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-
-    @media @bp-tablet {
-        display: none;
-    }
-}
-
-
-// Title & Description
-
-.gallery__image-title {
-    font-family: @font__h2--font-family;
-    font-size: @font__h2--font-size;
-    position: relative;
-    margin: 0 0 8px;
-    padding: 0.4em 1em;
-    background: @color-swatch2;
-
-    // Positions the title before hover
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: translate3d(-364px,0,0);
-    transform: translate3d(-364px,0,0);
-}
-
-
-.gallery__image-description {
-    display: relative;
-    margin: 0 0 8px;
-    padding: 0.4em 1em;
-    background: @color-swatch2;
-
-    // Positions the title before hover
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: translate3d(-364px,0,0);
-    transform: translate3d(-364px,0,0);
-}
-
-
-.gallery__figure:hover .gallery__image-title ,
-.gallery__figure:hover .gallery__image-description{
-    opacity: 1;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-}
-
-
-.gallery__image-title {
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-}
-
-
-.gallery__image-description {
-    -webkit-transition-delay: 0.15s;
-    transition-delay: 0.15s;
-}
-
-// Removes any captions when the image is in a column
-.responsivecolumns .gallery__image-title,
-.responsivecolumns .gallery__image-description {
-    display: none;
-}
-
-
-
-// -----------------------------
-// 5.  #Slideshow
-// -----------------------------
-
-
-// Slideshow items
-// ---------------
-
-// Slideshow set minimum height
-.responsiveslideshow .slides-list,
-.responsiveslideshow .figure {
-    position: relative;
-    min-height: 400px;
-}
-
-
-// Slideshow Layout
-// ----------------
-
-// Slideshow Height
-.responsiveslideshow, .responsiveslideshow__figure {
-    position: relative;
-    min-height: 400px;
-}
-
-
-// Fixes jumping slides
-.responsiveslideshow .slide-item {
-    overflow: hidden;
-    height: 400px;
-}
-
-
-// Slideshow Images
-// ----------------
-
-// Use Background-image Method
-.responsiveslideshow__figure {
-    background-size: cover;
-    background-position: center;
-}
-// Hide Img Element
-.responsiveslideshow__image {
-    display: none;
-}
-
-
-// Slideshow Image Captions
-// ------------------------
-
-.responsiveslideshow  .caption {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 0;
-    background-color: @color__slideshow-caption--background;
-
-    @media @bp-mobile {
-        padding: 0 20px;
-    }
-}
-
-.responsiveslideshow__image-title,
-.responsiveslideshow__image-description {
-    width: 100%;
-    padding: 3px 20px;
-    margin-bottom: 0;
-}
-
-.responsiveslideshow .image-title {
-    color: @color__slideshow-title--text;
-}
-
-.responsiveslideshow .image-description {
-    color: @color__slideshow-description--text;
-}
-
-
-// Slideshow Controls
-// ------------------
-
-// Navigation Buttons
-.slide-navigation {
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
+    margin: 0;
+    padding: 20px;
+    opacity: 0;
+    background-color: hsla(hue(@color__body--background),
+                           saturation(@color__body--background),
+                           lightness(@color__body--background), 0.9);
+    border: 1px solid darken(@color__body--background, 5%);
+    .transition( all, 0.5s, ease );
+}
+
+.gallery .caption-link {
     width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    height: 100%;
 
-      -webkit-box-direction: normal;
-         -moz-box-direction: normal;
-         -webkit-box-orient: horizontal;
-            -moz-box-orient: horizontal;
-     -webkit-flex-direction: row;
-         -ms-flex-direction: row;
-             flex-direction: row;
-          -webkit-flex-wrap: nowrap;
-              -ms-flex-wrap: nowrap;
-                  flex-wrap: nowrap;
-           -webkit-box-pack: justify;
-              -moz-box-pack: justify;
-    -webkit-justify-content: space-between;
-              -ms-flex-pack: justify;
-            justify-content: space-between;
-      -webkit-align-content: center;
-         -ms-flex-line-pack: center;
-              align-content: center;
-          -webkit-box-align: center;
-             -moz-box-align: center;
-        -webkit-align-items: center;
-             -ms-flex-align: center;
-                align-items: center;
+    .flex-display;
+    .flex-wrap(wrap);
+    .justify-content(center);
+    .align-items(center);
+    .align-content(center);
+
 }
 
-
-// Prev, Next, Pause Buttons
-button.responsiveslideshow__previous-button,
-button.responsiveslideshow__next-button,
-button.pause-toggle {
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    color: @contrast-color;
-    background-color: transparent;
-    font-size: 15px;
-    &:hover {
-        background-color: transparent;
-        color: @contrast-color;
-    }
-    // Removes margin-right for icons
-    &:before {
-        margin-right: 0;
-    }
-}
-
-.no-touch {
-    button.responsiveslideshow__previous-button:hover,
-    button.responsiveslideshow__next-button:hover,
-    button.pause-toggle:hover {
-        background-color: @color__button--background--hover;
-        color: @color__button--text;
-    }
-}
-
-
-// Ensures pause button is aligned centrally if next and prev buttons are hidden
-button.pause-toggle {
-    margin: 0 auto;
-}
-
-
-// Removes button text
-.responsiveslideshow__control-text {
-    display: none;
-}
-
-
-// Pagination
-// ----------
-
-.responsiveslideshow__pagination-list {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-box-align: start;
-    -moz-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-}
-
-
-.responsiveslideshow__pagination-item {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-}
-
-
-// Pagination Item
-.responsiveslideshow__pagination-item {
-    margin: 1px 0;
-}
-
-
-// Pagination Button
-.responsiveslideshow .button--pagination {
+.gallery__image-title {
     width: 100%;
-    height: 2px;
-    text-align: left;
-    padding: 0;
+    font-family: @font__h4--font-family;
+    font-size: @font__h4--font-size;
+    line-height: @font__h4--line-height;
+    color: @color__h4--text;
+    text-align: center;
+    .transition( all, 0.5s, ease );
+}
+
+.gallery__image-description {
+    width: 100%;
+    font-size: @font__p--font-size;
+    line-height: @font__p--line-height;
+    color: @color__p--text;
+    text-align: center;
+    .transition( all, 0.5s, ease );
+}
+
+// Show Caption
+.gallery__figure:hover .gallery__caption {
+    opacity: 1;
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+// Hide Caption
+.gallery__figure {
     overflow: hidden;
-    border-radius: 0;
-
-    background-color: @bg-color;
-    border-top: 1px solid @bg-color;
-    .transition(@duration:0.6s, @ease:ease-in-out); // Mixin > Other Mixins: Transitions
+    position: relative;
 }
 
-
-.responsiveslideshow .pagination-item.selected > .button--pagination {
-    background-color: @color__slideshow-caption--background;
-    border-top: 1px solid @color__slideshow-caption--background;
+.gallery__caption {
+    width: 100%;
+    margin-right: -100%;
+    overflow: hidden;
+    border: none;
 }
 
+.gallery__figure:hover .gallery__caption {
+    margin-right: 0;
+}
 
+// Gallery in Responsive Columns
+// -----------------------------
+
+.responsivecolumns {
+    .gallery .image-link {
+        height: 250px;
+        @media @mobile {
+            height: 200px;
+        }
+    }
+}
 
 
 // -----------------------------
-// 6.  #Buttons
+// 5.  #Buttons
 // -----------------------------
 
 // Formatting all inputs and buttons so they match in size
@@ -570,7 +293,7 @@ button,
 
 
 // -----------------------------
-// 7.  #Forms
+// 6.  #Forms
 // -----------------------------
 
 // Form Body
@@ -674,7 +397,6 @@ input[type="password"],
 textarea,
 .input--single-line {
     // Padding is set in stylesheet.less
-    border: 1px solid @button-color;
     resize: none;
     &:focus {
         border-color: @contrast-color;
@@ -692,7 +414,7 @@ textarea,
 
 
 // -----------------------------
-// 8.  #Social Icons
+// 7.  #Social Icons
 // -----------------------------
 
 
@@ -738,7 +460,7 @@ textarea,
 
 
 // -----------------------------
-// 9.  #Twitter Feed
+// 8.  #Twitter Feed
 // -----------------------------
 
 
@@ -815,7 +537,7 @@ textarea,
 
 
 // -----------------------------
-// 10.  #Divider (Keyline)
+// 9.  #Divider (Keyline)
 // -----------------------------
 
 hr,
@@ -828,7 +550,7 @@ hr.rule {
 
 
 // -----------------------------
-// 11. #Yelp
+// 10. #Yelp
 // -----------------------------
 
 .review-list {
@@ -840,7 +562,7 @@ hr.rule {
 
 
 // -----------------------------
-// 12. #Messages
+// 11. #Messages
 // -----------------------------
 
 .message {
