@@ -1,0 +1,217 @@
+// --------------------------------
+// Blog Post List
+// --------------------------------
+
+
+.blogpostlist {
+    margin: 0 -12px 80px;
+    .post-article {
+        padding: 0 12px 24px;
+    }
+    .post-list-footer {
+        padding: 0 12px;
+    }
+    @media @bp-mobile {
+        margin: 0 auto;
+        .post-article {
+            padding: 0 0 24px;
+        }
+        .post-list-footer {
+            padding: 0;
+        }
+    }
+}
+
+
+.blogpostlist__post-items {
+    cursor: pointer;
+}
+
+// Articles
+.blogpostlist .post-article {
+    float: left;
+    width: 33.33%;
+    height: auto;
+
+    // Border
+    .post-image,
+    .post-content,
+    .post-footer {
+        border-left: 1px solid lighten(@black, 60%);
+        border-right: 1px solid lighten(@black, 60%);
+    }
+    .post-content {
+        border-top: 1px solid lighten(@black, 60%);
+    }
+    .post-image {
+        border-top: 1px solid lighten(@black, 60%);
+    }
+    .post-footer {
+        border-bottom: 1px solid lighten(@black, 60%);
+        .timestamp {
+            margin: 0;
+        }
+    }
+
+    .transition(@duration:0.2s, @ease:ease-in-out);
+
+    // Display 50% at tablet
+    @media only screen and (max-width : 950px) {
+        width: 50%;
+    }
+
+    // Display 100% at mobile
+    @media @bp-mobile {
+        width: 100%;
+        margin-bottom: 20px;
+        min-width: 260px;
+    }
+}
+
+.responsivecolumns {
+    .blogpostlist .post-article {
+        width: 100%;
+    }
+}
+
+
+.blogpostlist .post-article:hover {
+    // Border on hover
+    .post-image,
+    .post-content,
+    .post-footer {
+        border-left: 1px solid @contrast-color;
+        border-right: 1px solid @contrast-color;
+    }
+    .post-content {
+        border-top: 1px solid @contrast-color;
+    }
+    .post-image {
+        border-top: 1px solid @contrast-color;
+    }
+    .post-footer {
+        border-bottom: 1px solid @contrast-color;
+    }
+    .read-more {
+        color: @contrast-color;
+    }
+}
+
+
+// Read More button
+.blogpostlist  .read-more {
+    color: @paragraph-color;
+
+    .transition(@duration:0.2s, @ease:ease-in-out);
+
+    @media @bp-mobile {
+        height: 35px;
+        padding-top: 9px;
+    }
+}
+
+
+// Content
+// ---------------
+
+// Image - Stops warping when large image is inserted
+.blogpostlist__image {
+    width: 100%;
+    max-height: inherit !important; // Bootstrap overide so that list images retain full height
+}
+
+
+// Title
+.blogpostlist__title-link {
+  color: @heading-color;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+// Read more button
+.blogpostlist__read-more:hover {
+    text-decoration: none;
+}
+
+
+// Content & Timestamp
+.blogpostlist__post-content {
+  padding: 20px 17px;
+  margin: 0;
+}
+
+.blogpostlist__timestamp {
+  padding: 0 17px 20px;
+  margin: 0;
+}
+
+
+.blogpostlist__post-footer .blogpostlist__timestamp {
+    font-size: 18px; // Stops design breaking when p sixe is changed
+
+    @media @bp-tablet {
+        font-size: 16px;
+    }
+
+    @media @bp-mobile {
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+// Pagination
+
+.blogpostlist .pagination-list {
+    width: 100%;
+    @media @bp-mobile {
+        text-align: center;
+    }
+    .pagination-item {
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+
+// Post List Footer
+// ----------------
+
+.post-list-footer {
+    float: left;
+    width: 100%;
+}
+
+.blogpostlist__pagination-item .button--pagination {
+    margin-bottom: 10px;
+}
+
+
+
+// --------------------------------
+// Blog Post Page
+// --------------------------------
+
+.blogpost {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.blogpost__post-content {
+    margin: 50px 0 20px;
+}
+
+
+.blogpost__post-header {
+    margin-bottom: 10px;
+}
+
+
+.post-image .image {
+    max-height: inherit; // Bootstrap overide so that blog images retain full height
+}
+
+

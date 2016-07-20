@@ -1,0 +1,16 @@
+<!-- Footer include -->
+<footer class="template-footer">
+    {{widget('content', 'footer-content', {
+    content: '<p>&copy; Copyright</p>'
+    })|raw}}
+    <div class="footer-social">
+        {{widget('socialicons', 'footersocial', {
+            'googleplus': 'profile',
+            'linkedin':'profile',
+            'facebook': 'profile',
+            'twitter': 'profile',
+            'youtube': 'profile',
+            'rss': 'profile'
+        })|raw}}
+    </div>
+</footer>

@@ -1,0 +1,338 @@
+// -------------------
+// Navigation
+// -------------------
+
+
+// Editor Overlay
+// -------------------
+
+.extendednavigation + .widget-overlay {
+    width: 60px;
+    position: absolute !important;
+    z-index: 999999;
+    height: 130px;
+
+    @media @bp-mobile {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+// Extended Navigation
+// -------------------
+
+.extendednavigation {
+    width: 60px;
+    height: 100%;
+    position: fixed;
+    z-index: 99999;
+
+    background-color: @color__navigation--background;
+    &:hover {
+        background-color: lighten(@color__navigation--background, 3%);
+    }
+
+    @media @bp-mobile {
+        width: 0;
+    }
+}
+
+// Removes fixed positioning from nav icon on editor
+body.edit .extendednavigation {
+    @media @mobile {
+        position: absolute;
+    }
+}
+
+
+// Navigation List
+// -------------------
+
+.navigation-list {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 40%;
+    .transform(@x:-100%, @y:0);
+    transition-duration: 0.4s;
+
+
+    z-index: 2;
+
+    padding: 150px 100px;
+    background-color: @contrast-color;
+
+    // Allows scrolling on mobile
+    &.open {
+        overflow: auto;
+    }
+
+    @media @bp-mobile {
+        width: 100%;
+        padding: 90px 0 0 0;
+    }
+}
+
+
+// Hides navigation until toggled
+.navigation-list {
+    margin: 0;
+        &.open {
+            display: block;
+            background-color: lighten(@color__navigation--background, 3%);
+        }
+}
+
+
+// Navigation Item
+// -------------------
+
+// Navigation item
+.navigation-item {
+    opacity: 0;
+    .transform(@x:0, @y:5px);
+    .transition(@duration:1s, @ease:ease-in-out);
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    z-index: 0;
+
+    .navigation-item:hover & {
+        display: block;
+    }
+}
+
+
+// Selected Navigation Link
+.navigation-item.selected > .item-name {
+    text-decoration: underline;
+}
+
+
+// Adds Hover State
+.navigation-item .item-name:hover {
+    text-decoration: underline;
+}
+
+
+// Navigation item when nav is open
+.navigation-list.open {
+  .transform(@x:0, @y:0);
+
+  .navigation-item {
+        .transform(@x:0, @y:0);
+        display: block;
+        opacity: 1;
+  }
+}
+
+
+// Folders
+// -------------
+
+// Parent nav items, adds arrow icon
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @color-swatch6;
+}
+
+
+.navigation-list .navigation-list--children {
+    @media only screen and (min-width: 1025px) {
+        padding: 0;
+        position: relative;
+        left: 50px;
+        top: 100%;
+        height: auto;
+        min-width: 100%;
+        background-color: lighten(@contrast-color,4%);
+        white-space: nowrap;
+
+        .transform(@x:-5px, @y:0);
+        .transition(@duration:0.4s, @ease:ease-in-out);
+
+        display: block;
+        position: absolute;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+}
+
+.navigation-list.open .navigation-item:hover .navigation-list--children {
+  @media only screen and (min-width: 1025px) {
+      height: auto;
+      padding: 0;
+      position: relative;
+      opacity: 1;
+      .transform(@x:0, @y:0);
+      visibility: visible;
+    }
+}
+
+.navigation-item.folder .navigation-list--children {
+    @media only screen and (max-width: 1024px) {
+        .transform(@x:0, @y:0);
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        display: block;
+        position: absolute;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+}
+
+.navigation-item.folder.folder-open .navigation-list--children {
+    @media only screen and (max-width: 1024px) {
+        .transform(@x:0, @y:0);
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        height: auto;
+        padding: 0;
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+
+// Navigation Toggle
+// -----------------
+
+
+// This adds the coloured background to the nav at mobile
+.extendednavigation:after {
+    @media @bp-mobile {
+        content: "";
+        padding: 24px 26px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        background-color: lighten(@color__navigation--background, 3%);
+        -webkit-border-radius: 0 3px 3px 0;
+        -moz-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;
+        z-index: -1;
+    }
+}
+
+
+.navigation-toggle {
+    .animation;
+    // Displays as icon's middle bar
+    background-color: @color__navigation--text;
+    background-clip: content-box;
+    width: 50px;
+    height: 46px;
+    padding: 22px 10px;
+    position: relative;
+    margin: 35px auto;
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+
+    .transition(@duration:0.2s, @ease:ease-in-out);
+
+    @media @bp-mobile {
+        margin-top: 10px;
+    }
+
+    // Top and bottom navigation item bar
+
+    &:after, &:before {
+        content: "";
+        height: 2px;
+        width: 30px;
+        position: absolute;
+        left: 10px;
+        display: block;
+        background: @color__navigation--text;
+        margin-right: 0;
+        margin-left: 0;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+
+    // Top bar
+
+    &:before {
+        top: 14px;
+
+    }
+
+    // Bottom bar
+
+    &:after {
+        bottom: 14px;
+    }
+
+    &:hover {
+        background-color: @color__navigation--text;
+
+        &:after, &:before {
+            background: @color__navigation--text;
+        }
+    }
+
+
+    // Toggle Button open state
+    // ------------------------------
+
+    .open & {
+        background-color: fade(@color__navigation--text, 0%);
+        z-index: 100000;
+        position: relative;
+
+        &:before {
+            top: 23px; background: @color__navigation--text; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);
+
+        }
+        &:after {
+            bottom: 21px; background: @color__navigation--text; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -o-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg);
+        }
+    }
+}
+
+
+
+@keyframes bar1 {
+    0% { top: 13px;}
+    50% { top: 23px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);  }
+    100% {top: 23px; background: @color-swatch1; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);   }
+}
+
+@-webkit-keyframes bar1 {
+    0% { top: 13px;}
+    50% { top: 23px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);   }
+    100% {  }
+}
+
+@keyframes bar2 {
+    0% { bottom: 13px;}
+    50% { bottom: 21px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);  }
+    100% {}
+}
+
+@-webkit-keyframes bar2 {
+    0% { bottom: 13px;}
+    50% { bottom: 21px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);   }
+    100% {}
+}

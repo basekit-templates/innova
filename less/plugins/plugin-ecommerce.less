@@ -1,0 +1,901 @@
+// ------------------------------------
+// CSS > Plugin: Ecommerce
+// ------------------------------------
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+// 1. #PRODUCT LIST
+//      #1.1 #PRODUCT FILTERS
+
+// 2. #SINGLE PRODUCT
+// 3. #PRODUCT IMAGES
+// 4. #BASKET WIDGET
+// 5. #BASKET SUMMARY
+
+
+
+
+// -----------------------------
+// 1. #Product List
+// -----------------------------
+
+// Product List
+.product-list {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+
+// This sets up the widths for each item
+.product-item {
+    position: relative;
+    width: 32%;
+    margin-bottom: 30px;
+
+    // Display 100% at mobile
+    @media only screen
+    and (max-width : 667px) {
+        width: 100%;
+    }
+}
+
+.ecomproductslist__title-link {
+    color: @heading-color;
+}
+
+// Adds margin bottom
+.ecomproduct__product-image {
+    @media @bp-tablet {
+        margin-bottom: 20px;
+    }
+}
+
+// Title
+.product-item-title,
+.product-item-price {
+    text-align: center;
+
+    @media only screen
+    and (max-width : 667px) {
+        font-size: @font__p--font-size;
+        line-height: bkscale(@font__p--line-height,0.8);
+        text-align: left;
+    }
+}
+
+
+// -------------------------------------
+// Ecom Filters
+// -------------------------------------
+
+.ecomproductslist .form,// Ecom Form
+.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+.ecomproductslist .fieldset--search .form-body { // Ecom Search
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.ecomproductslist .form {
+    float: left;
+    width: 100%;
+}
+
+.form-group {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: flex-end;
+    align-self: flex-end;
+    .input,
+    .select {
+        width: 100%;
+    }
+}
+
+.form-group:first-child {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    @media @mobile {
+        width: 100%;
+    }
+}
+
+.form-group:last-child {
+    .button {
+        white-space: nowrap;
+        @media @mobile {
+            white-space: normal;
+        }
+    }
+}
+
+
+// Hide Legend
+.ecomproductslist .legend {
+    display: none;
+}
+
+// Flexbox form on Desktop
+@media only screen and (min-width: 480px) {
+    .fieldset--search {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        .form-group {
+            margin-right: 0;
+        }
+        .form-group:last-child {
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            .button--submit {
+                height: 36px;
+                padding: 0 12px;
+            }
+        }
+    }
+    .fieldset--filters {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        -webkit-flex: 1 1 70%;
+        -ms-flex: 1 1 70%;
+        flex: 1 1 70%;
+        -webkit-align-self: auto;
+        -ms-flex-item-align: auto;
+        align-self: auto;
+        .form-group {
+            -webkit-flex: 0 1 100%;
+            -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+        }
+    }
+}
+
+// Flexbox form on Tablet
+.ecomproductslist .form { // Ecom Form
+    @media @tablet {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-box-align: stretch;
+        -moz-box-align: stretch;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        .fieldset--search,
+        .fieldset--filters {
+            -webkit-flex: 0 1 auto;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+        }
+        .form-group:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// Responsive Columns
+
+// Two Columns
+.columns-two-left,
+.columns-two-right,
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .ecomproductslist .form,// Ecom Form
+    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+    .ecomproductslist .fieldset--search .form-body,// Ecom Search
+    .ecomproductslist .form-group {
+        display: inline-block;
+        width: 100%;
+        margin-right: 0;
+        .input {
+            margin-bottom: 10px;
+        }
+        .button {
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 8px 20px;
+            white-space: normal;
+        }
+    }
+}
+
+
+// Ecom Clear-Button
+// -----------------
+
+.ecomproductslist .form .fieldset--search .button--clear {
+    margin-left: 20px;
+    @media @mobile {
+        margin-left: 0;
+    }
+}
+
+// Two Columns
+.columns-two-left,
+.columns-two-right {
+    .ecomproductslist .form .fieldset--search .button--clear {
+        margin-left: 20px;
+        @media @tablet {
+            margin-left: 0;
+        }
+    }
+}
+
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .ecomproductslist .form .fieldset--search .button--clear {
+        margin-left: 0;
+    }
+}
+
+
+
+// Ecom form on Mobile
+// -------------------
+
+.ecomproductslist .form,// Ecom Form
+.ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+.ecomproductslist .fieldset--search .form-body,// Ecom Search
+.ecomproductslist .form-group {
+    @media @mobile {
+        display: inline-block;
+        width: 100%;
+        margin-right: 0;
+        .input {
+            margin-bottom: 10px;
+        }
+        .button {
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+}
+
+
+// Responsive Columns
+// ------------------
+
+.responsivecolumns {
+    // Image
+    .product-item-image {
+        height: 200px;
+    }
+
+    // Price
+    .product-item-price {
+        max-width: inherit;
+        height: auto;
+        padding: 3px 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: bkscale(@font__p--font-size,0.8);
+    }
+
+    .product-item-title {
+        font-size: @font__p--font-size;
+        line-height: bkscale(@font__p--line-height,0.8);
+        text-align: left;
+    }
+}
+
+
+
+// -----------------------------
+// 2. #Single Product
+// -----------------------------
+
+// Display images and content inline
+.product-images,
+.product-content {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+// Product Images
+// --------------
+
+.product-images {
+    width: 45%;
+    margin-right: 3%;
+    @media @bp-tablet {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.product-gallery .image--thumb {
+    max-height: 80px;
+    @media @mobile {
+        max-height: 60px;
+    }
+}
+
+
+// Product Content
+// ---------------
+
+.product-content {
+    width: 51%;
+    @media @bp-tablet {
+        width: 100%;
+    }
+}
+
+// Product Details
+.product-price { font-size: @font__p--font-size; }
+
+
+// Product Form
+// ------------
+
+.ecomproduct__form {
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+
+.ecomproduct__form-group {
+    float: left;
+    margin-right: 30px;
+}
+
+
+.ecomproduct__form-body { margin: 0; }
+
+// Adds extra margin to fieldset at mobile
+.ecomproduct__fieldset {
+    @media @bp-mobile { margin-bottom: 20px;}
+}
+
+
+// Reset legend styles
+.ecomproduct__legend {
+    padding: 0 0 10px;
+    background-color: transparent;
+    border: 0;
+}
+
+
+// Form Select
+.ecomproduct__select {
+    min-width: 377px;
+
+    @media @bp-mobile {
+        min-width: 172px;
+    }
+}
+
+
+// Add to Basket,
+// View Basket Buttons
+.button--submit.ecomproduct__input,
+.ecomproduct__button {
+    min-width: 150px;
+    padding: 11px 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+// product Tags
+.tag-item {
+    margin-right: -4px;
+}
+.tag-item:first-child:before {
+    display: none;
+}
+.tag-item:before {
+    content: ',';
+}
+
+
+// Once product is added
+.form .button {
+    &.added {
+        &:before {
+            content: '\f00c'
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// 3. #Product Images
+// -----------------------------
+
+// Adds margin to product image div
+.product-item-image,
+.basket-item-image {
+    margin-bottom: 20px;
+}
+
+
+
+
+// -----------------------------
+// 4. #Basket Widget
+// -----------------------------
+
+// Basket Body
+.basket-body {
+    min-width: 40%;
+    width: 100%;
+	padding: 30px;
+
+    @media @bp-tablet {
+        width: 100%;
+    }
+    @media @bp-mobile {
+        padding: 20px;
+    }
+}
+
+// Basket Item
+.basket-item {
+	position: relative;
+	padding: 30px;
+	background-color: @bg-color;
+    border-top: 1px solid darken(@color-swatch1, 30%);
+
+    &:last-child {
+        border-bottom: 1px solid darken(@color-swatch1, 30%);
+    }
+}
+
+// Remove BG colour on summary form
+.form.basket-summary__summary-form { background-color: transparent; }
+
+
+// Basket Layout
+// -------------
+
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+}
+
+
+// Basket Image
+// ------------
+
+.basket-item-image {
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+
+
+// Remove Item Button
+// ------------------
+
+// Position in top-right
+.item-remove {
+	position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    font-size: 14px;
+}
+
+// Remove icon spacing
+.item-remove:before {
+    margin-right: 0;
+}
+
+// Hide button text
+.remove-text {
+    display: none;
+}
+
+
+// Basket Footer
+// -------------
+
+.basket-footer {
+    margin-top: 0;
+    padding: 30px;
+    background-color: darken(@color-swatch1,10%);
+}
+
+.basket-total {
+    padding-bottom: 20px;
+    color: @heading-color;
+    text-transform: uppercase;
+}
+
+
+
+
+// -----------------------------
+// 5. #Basket Summary
+// -----------------------------
+
+// Summary Table
+// ------------------------------
+
+.summary-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    width: 100%;
+    margin: 0;
+
+    // Table and Cells Reset
+    // ------------------------------
+
+    &, td, th, .cell {
+        border: none;
+        background: transparent;
+        padding: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+
+    // Row Heading
+    // ------------------------------
+
+    .table-row {
+        .cell {
+            padding: 5px;
+            border-bottom: 1px solid darken(@color-swatch1, 30%);
+            @media @bp-mobile {
+                border-bottom: none;
+            }
+        }
+        &:last-child .cell {
+            border-bottom: none;
+        }
+        @media @bp-mobile {
+            border-bottom: 1px solid darken(@color-swatch1, 30%);
+        }
+    }
+
+    .table-row--heading {
+        .cell--header {
+            text-align: right;
+        }
+        .cell--header:first-child {
+            text-align: left;
+        }
+        .cell--header:nth-child(2) {
+            text-align: center;
+        }
+        @media @bp-tablet {
+            .cell--header,
+            .cell--header:nth-child(2) {
+                text-align: left;
+            }
+        }
+    }
+
+    // Cell Image
+    // ------------------------------
+
+    .cell--image {
+        width: 126px;
+        padding-left: 10px;
+    }
+
+
+    // Cell Title
+    // ------------------------------
+
+    .cell--title {
+        width: auto;
+        padding-right: 10px;
+        padding-left: 16px;
+
+    }
+
+
+    // Item Title
+    // ------------------------------
+
+    .summary-item-title  {
+        font-size: @font__h4--font-size;
+    }
+
+        // Item Link
+
+        .summary-item-link {
+            color: @font-swatch5-color;
+        }
+
+
+    // Cell Quantity
+    // ------------------------------
+
+    .cell--quantity {
+        width: 10%;
+        min-width: 100px;
+        text-align: center;
+    }
+
+
+    // Cell Total, Cell Price
+    // ------------------------------
+
+    .cell--total,
+    .cell--price {
+        text-align: right;
+    }
+
+
+    // Order Total
+    // ------------------------------
+
+    .cell--order-total {
+        text-align: right;
+        background-color: @color-swatch1;
+    }
+
+
+    // Cell Image Item Link
+    // ------------------------------
+
+    .cell--image .summary-item-link {
+        width: 100px;
+        height: 100px;
+        display: block;
+        line-height: 80px;
+        background-position: -100%;
+        background-color: #fff;
+        padding: 10px;
+
+        // Image
+
+        .image {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 80px;
+            max-height: 80px;
+            @media @bp-mobile {
+                vertical-align: top;
+            }
+        }
+    }
+
+
+    // Row Order Total
+    // ------------------------------
+
+    .table-row--order-total {
+        background-color: transparent;
+    }
+
+        // Order Total
+        .order-total {
+            color: @font-swatch5-color;
+        }
+}
+
+
+// Quantity Wrap
+// ------------------------------
+
+.quantity-wrap {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    background-color: transparent;
+
+    // Button Quantity
+
+    .button--quantity {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    // Quantity Field
+
+    .quantity-field {
+        color: @font-swatch5-color;
+    }
+}
+
+
+
+
+// ------------------------------
+// Mobile Layout
+// ------------------------------
+
+@media @bp-mobile {
+
+
+    // Summary Table
+    // ------------------------------
+
+    .summary-table {
+
+        // Table elements to block elements
+
+        &, .table-row, .cell, .summary-body {
+            display: block;
+        }
+
+        // Table Row Heading
+
+        .table-row--heading {
+            display: none;
+        }
+
+        // Table Row
+
+        .table-row {
+            overflow: hidden;
+            margin-bottom: 10px;
+            clear: both;
+        }
+
+        // Cell Image
+
+        .cell--image {
+            float: left;
+        }
+
+        // Item Title
+
+        .summary-item-title  {
+            font-size: bkscale(@font__h4--font-size, 1);
+        }
+
+        // Cell Price, Cell Total, Cell Quantity LABELS
+
+        .cell--price, .cell--total, .cell--quantity {
+            &:before {
+                content: attr(data-title);
+                display: block;
+                font-size: 13px;
+            }
+        }
+
+        // Cell Quantity
+
+        .cell.cell--quantity {
+            clear: both;
+            padding: 6px 10px;
+            text-align: right;
+            position: relative;
+            width: auto;
+
+            // Pseudo Label - LESS Framework
+
+            &:before {
+                height: 30px;
+                line-height: 30px !important;
+                display: block;
+                position: absolute;
+                right: 90px;
+                top: 6px;
+            }
+        }
+
+        // Quantity Wrap
+
+        .quantity-wrap {
+            margin: 0 -5px 0 auto;
+            width: 80px;
+            max-width: 100%;
+            .button--quantity {
+                line-height: 20px;
+            }
+        }
+
+        // Cell Price
+
+        .cell--price {
+            clear: left;
+        }
+
+        // Order Total
+
+        .order-total {
+            text-align: center;
+        }
+
+        // Cell Price, Cell Total
+
+        .cell--price, .cell--total {
+            float: left;
+            width: 50%;
+            padding: 6px 10px;
+        }
+    }
+}

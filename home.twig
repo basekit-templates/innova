@@ -1,0 +1,47 @@
+{% extends "layout.twig" %}
+{% block class %}bk-pt-home{% endblock %}
+{% block content %}
+
+    <div class="homepage-centred-container">
+
+        {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
+
+        <!-- Theme Feature Widget -->
+
+        {{widget('feature', 'featurehome', {
+            "header": "profile",
+            "defaultBgImg": asset('images/feature.jpg'),
+            'positionTopPercentage': '0',
+            'showBtn': true,
+            buttonText: "Lorem Ipsum"
+        })|raw}}
+
+        {% include "includes/header.twig" %}
+
+        <div class="page-wrapper">
+
+            <!-- Container -->
+            <div class="container">
+
+                <!-- Page Content -->
+                <section class="template-content">
+
+
+                    <!-- Main Widget Zone -->
+                    {{zone('main')|raw}}
+
+                    <!-- Footer Text Widget -->
+                    {% include "includes/footer.twig" %}
+
+                </section>
+                <!-- End Page Content -->
+
+            </div>
+            <!-- End Container -->
+
+        </div>
+        <!-- End Page Wrapper -->
+
+    </div>
+
+{% endblock %}
