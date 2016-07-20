@@ -24,6 +24,7 @@
 // 11.   #Yelp
 // 12.   #Messages
 // 13.   #Linkedin
+// 14.   #Blockquote
 
 
 
@@ -879,5 +880,22 @@ hr.rule {
 .linkedincompanyprofile {
     @media @bp-mobile {
         transform: scale(0.8);
+    }
+}
+
+
+// -----------------------------
+// 14. #Blockquote
+// -----------------------------
+
+blockquote {
+    position: relative;
+    background-color: transparent;
+    padding: 20px 35px;
+    &:before {
+        position: absolute;
+        left: 5px;
+        color: @color-swatch2;
+        font-size: 55px;
     }
 }

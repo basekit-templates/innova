@@ -25,34 +25,34 @@
     "fontSwatch": {
        "title": "Arvo, Lato",
         "font1": {
-            "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "26px",
-            "font-weight": "400",
-            "line-height": "40px",
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "36px",
+            "font-weight": "300",
+            "line-height": "46px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
         "font2": {
-            "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "22px",
-            "font-weight": "400",
-            "line-height": "38px",
+            "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+            "font-size": "30px",
+            "font-weight": "300",
+            "line-height": "40px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
         "font3": {
             "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "20px",
+            "font-size": "22px",
             "font-weight": "400",
-            "line-height": "30px",
+            "line-height": "32px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
         "font4": {
             "font-family": "\"Arvo\", Georgia, serif",
-            "font-size": "18px",
+            "font-size": "20px",
             "font-weight": "400",
-            "line-height": "28px",
+            "line-height": "30px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
         },
