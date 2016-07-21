@@ -10,8 +10,6 @@
 @import "@{templateCommon}/bk-less-framework-v8.less";          // BK LESS Framework
 //@import "@{templateLocal}/bk-v8-test.less";
 
-// @import "@{templateLocal}/less/v8-variables.less";              // V8 Variables
-
 @import "@{templateLocal}/less/variables-mixins.less";          // Variables
 
 @import "@{templateLocal}/less/widgets/widgets-all.less";       // Widgets > All
@@ -37,6 +35,77 @@
 // -----------------------------
 // Global Styles
 // -----------------------------
+
+body {
+    background-color: @color__body--background;
+}
+
+// Typography
+// ----------
+
+.company-link {
+    color: @color__companyname--text;
+    font-family: @font__companyname--font-family;
+    font-size: @font__companyname--font-size;
+    font-weight: @font__companyname--font-weight;
+    line-height: @font__companyname--line-height;
+    letter-spacing: @font__companyname--letter-spacing;
+    @media only screen and (max-width : 600px) {
+        font-size: bkscale(@font__companyname--font-size,0.8);
+        line-height: bkscale(@font__companyname--line-height,0.8);
+    }
+}
+
+
+a {
+    color: @color__link--text;
+}
+
+h1 {
+    color: @color__h1--text;
+    font-family: @font__h1--font-family;
+    font-size: @font__h1--font-size;
+    font-weight: @font__h1--font-weight;
+    line-height: @font__h1--line-height;
+    letter-spacing: @font__h1--letter-spacing;
+}
+
+h2 {
+    color: @color__h2--text;
+    font-family: @font__h2--font-family;
+    font-size: @font__h2--font-size;
+    font-weight: @font__h2--font-weight;
+    line-height: @font__h2--line-height;
+    letter-spacing: @font__h2--letter-spacing;
+}
+
+h3 {
+    color: @color__h3--text;
+    font-family: @font__h3--font-family;
+    font-size: @font__h3--font-size;
+    font-weight: @font__h3--font-weight;
+    line-height: @font__h3--line-height;
+    letter-spacing: @font__h3--letter-spacing;
+}
+
+h4 {
+    color: @color__h4--text;
+    font-family: @font__h4--font-family;
+    font-size: @font__h4--font-size;
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h4--line-height;
+    letter-spacing: @font__h4--letter-spacing;
+}
+
+p {
+    color: @color__p--text;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+}
+
 
 
 // Wrapping container
@@ -85,44 +154,6 @@
 // Stops mobile scrolling of the body - only the nav is scrollable
 .noscroll {
     overflow: hidden;
-}
-
-
-// Sticky footer in default page
-
-.bk-pt-default .container {
-    @media only screen and (min-width: 1025px) {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-align-content: center;
-        -ms-flex-line-pack: center;
-        align-content: center;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-        min-height: 100vh;
-    }
-}
-
-.sticky-footer {
-    @media only screen and (min-width: 1025px) {
-        flex: 1;
-        -webkit-box-flex: 1;
-        -moz-box-flex: 1;
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    }
 }
 
 
@@ -387,7 +418,7 @@
         color: @color-swatch3;
     }
     .social-link {
-        color: @black;
+        color: @color-swatch7;
     }
 }
 

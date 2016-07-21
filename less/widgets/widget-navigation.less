@@ -62,7 +62,7 @@ body.edit .extendednavigation {
     z-index: 2;
 
     padding: 150px 100px;
-    background-color: @contrast-color;
+    background-color: @color__navigation--background;
 
     // Allows scrolling on mobile
     &.open {
@@ -102,6 +102,21 @@ body.edit .extendednavigation {
 
     .navigation-item:hover & {
         display: block;
+    }
+
+    .item-name {
+        color: @color__navigation--text;
+        font-size: @font__navigation--font-size;
+        font-weight: @font__navigation--font-weight;
+        line-height: @font__navigation--line-height;
+        letter-spacing: @font__navigation--letter-spacing;
+        &:hover {
+            color: @color__navigation--text--hover;
+        }
+    }
+
+    .item-name--parent:after {
+        border-top-color: @color__navigation--text;
     }
 }
 
@@ -152,7 +167,7 @@ body.edit .extendednavigation {
         top: 100%;
         height: auto;
         min-width: 100%;
-        background-color: lighten(@contrast-color,4%);
+        background-color: lighten(@color__navigation--background,5%);
         white-space: nowrap;
 
         .transform(@x:-5px, @y:0);
@@ -223,7 +238,7 @@ body.edit .extendednavigation {
         position: absolute;
         top: 10px;
         left: 0;
-        background-color: lighten(@color__navigation--background, 3%);
+        background-color: @color__navigation--background;
         -webkit-border-radius: 0 3px 3px 0;
         -moz-border-radius: 0 3px 3px 0;
         border-radius: 0 3px 3px 0;

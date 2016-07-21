@@ -133,9 +133,6 @@
             "color__h4--text": "@font-swatch4-color",
             "color__p--text": "@font-swatch5-color",
 
-            "font__heading" : "@font-swatch1-font-family",
-            "font__body" : "@font-swatch5-font-family",
-
             "font__h1--font-family" : "@font-swatch1-font-family",
             "font__h1--font-size" : "@font-swatch1-font-size",
             "font__h1--font-weight" : "@font-swatch1-font-weight",
@@ -214,7 +211,7 @@
         },
         "slideshow": {
             "color__slideshow-caption--background": "@color__primary",
-            "color__slideshow-title--text": "@color-swatch1",
+            "color__slideshow-title--text": "@color-swatch6",
             "color__slideshow-description--text": "@color-swatch1"
         },
         "gallery": {
@@ -223,8 +220,7 @@
         },
         "blog": {
             "color__blogpostlist-article--background": "transparent",
-            "color__blogpostlist-title--text": "@color__h2--text",
-            "@color__blogpost-title--text": "@color-swatch4"
+            "color__blogpostlist-title--text": "@color__h2--text"
         },
         "ecommerce": {
             "color__ecomproduct-title--text": "@font-swatch1-color",

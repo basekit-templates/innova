@@ -52,7 +52,7 @@
 }
 
 .ecomproductslist__title-link {
-    color: @heading-color;
+    color: @color__h4--text;
 }
 
 // Adds margin bottom
@@ -366,6 +366,20 @@
     }
 }
 
+// Product title and price colour
+// ------------------------------
+
+.product-item-title.product-item-title,
+.ecomproductslist__title-link.ecomproductslist__title-link,
+.ecomproduct__product-title {
+    color: @color__ecomproduct-title--text;
+}
+
+.product-item-price,
+.ecomproduct__product-price {
+    color: @color__ecomproduct-price--text;
+}
+
 
 
 // -----------------------------
@@ -525,7 +539,7 @@
 .basket-item {
 	position: relative;
 	padding: 30px;
-	background-color: @bg-color;
+	background-color: @color__body--background;
     border-top: 1px solid darken(@color-swatch1, 30%);
 
     &:last-child {
@@ -591,7 +605,7 @@
 
 .basket-total {
     padding-bottom: 20px;
-    color: @heading-color;
+    color: @color__h4--text;
     text-transform: uppercase;
 }
 
