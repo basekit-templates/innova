@@ -17,7 +17,6 @@
 @import "@{templateLocal}/less/widgets/widget-navigation.less"; // Widgets > Navigation
 
 @import "@{templateLocal}/less/plugins/plugin-blog.less";       // Plugin > Blog
-@import "@{templateLocal}/less/plugins/plugin-menu.less";       // Plugin > Menu
 @import "@{templateLocal}/less/plugins/plugin-ecommerce.less";  // Plugin > Ecommerce
 
 
@@ -125,7 +124,7 @@ p {
 
 
 // Centre container for homepage
-.homepage-centred-container {
+.centred-container {
     .page-wrapper {
         margin-left: 60px;
     }
@@ -368,6 +367,72 @@ p {
 @media screen and (max-width : 600px) and (orientation:landscape) {
     .feature .content-wrap {
         vertical-align: bottom;
+    }
+}
+
+
+// Feature Arrow
+// ------------------------------
+
+.hero {
+    position: relative;
+}
+
+.feature-arrow {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 9999;
+    max-width: 100%;
+    opacity: .6;
+
+    @media @mobile {
+        display: none;
+    }
+}
+
+.feature-arrow-link {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+
+    background-image: image('/images/down-arrow.png');
+}
+
+
+// Arrow Bounce
+// ------------
+
+.arrow-bounce {
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -webkit-animation-duration: .7s;
+    -moz-animation-duration: .7s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    -webkit-animation-timing-function: eaze-in-out;
+    -moz-animation-timing-function: eaze-in-out;
+}
+
+// Bounce Keyframes
+@-webkit-keyframes bounce {
+    from {
+        top: 0;
+    }
+    to {
+        top: 8px;
+    }
+}
+@-moz-keyframes bounce {
+    from {
+        top: 0;
+    }
+    to {
+        top: 8px;
     }
 }
 

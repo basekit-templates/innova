@@ -2,21 +2,30 @@
 {% block class %}bk-pt-home{% endblock %}
 {% block content %}
 
-    <div class="homepage-centred-container">
+    <div class="centred-container">
 
         {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
 
-        <!-- Theme Feature Widget -->
+        <div class="hero">
 
-        {{widget('feature', 'featurehome', {
-            "header": "profile",
-            "defaultBgImg": asset('images/feature.jpg'),
-            'positionTopPercentage': '0',
-            'showBtn': true,
-            buttonText: "Lorem Ipsum"
-        })|raw}}
+            <!-- Theme Feature Widget -->
 
-        {% include "includes/header.twig" %}
+            {{widget('feature', 'featurehome', {
+                "header": "profile",
+                "defaultBgImg": asset('images/feature.jpg'),
+                'positionTopPercentage': '0',
+                'showBtn': true,
+                buttonText: "Lorem Ipsum"
+            })|raw}}
+
+            {% include "includes/header.twig" %}
+
+            <!-- Feature Arrow -->
+            <div class="feature-arrow">
+                <a href="#main-scroll" class="feature-arrow-link  arrow-bounce"></a>
+            </div>
+
+        </div>
 
         <div class="page-wrapper">
 
@@ -24,7 +33,7 @@
             <div class="container">
 
                 <!-- Page Content -->
-                <section class="template-content">
+                <section id="main-scroll" class="template-content">
 
 
                     <!-- Main Widget Zone -->
@@ -43,5 +52,17 @@
         <!-- End Page Wrapper -->
 
     </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+        $(".feature-arrow-link").click(function() {
+        $('html, body').animate({
+        scrollTop: $("#main-scroll").offset().top
+        }, 2000);
+        });
+    </script>
 
 {% endblock %}
