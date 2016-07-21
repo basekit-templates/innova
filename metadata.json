@@ -27,7 +27,7 @@
         "font1": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "38px",
-            "font-weight": "300",
+            "font-weight": "400",
             "line-height": "48px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
@@ -35,7 +35,7 @@
         "font2": {
             "font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
             "font-size": "34px",
-            "font-weight": "400",
+            "font-weight": "300",
             "line-height": "44px",
             "color": "@color-swatch4",
             "letter-spacing": "0px"
