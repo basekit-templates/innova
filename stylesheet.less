@@ -166,14 +166,6 @@ p {
 
 }
 
-.template-content {
-    margin-top: 50px;
-
-    @media @bp-mobile {
-        margin-top: 30px;
-    }
-}
-
 .home-copy {
     margin-bottom: 100px;
 }
@@ -382,6 +374,31 @@ p {
 
 
 
+// -----------------------------
+// Template Header
+// -----------------------------
+
+.template-header {
+    .flex-vert-center; // Mixins
+    .justify-content(@justify: flex-end); // Mixins
+    padding: 50px;
+    @media only screen and (max-width : 600px) {
+        padding: 14px 20px 20px 60px;
+    }
+    @media @bp-tablet {
+        .flex-wrap(@wrap: wrap); // Mixins
+    }
+}
+
+.bk-pt-default .template-header {
+    padding: 40px;
+    @media only screen and (max-width : 600px) {
+        padding: 14px 20px 20px 60px;
+    }
+}
+
+
+
 // -------------------
 // Feature Full Height
 // -------------------
@@ -396,10 +413,6 @@ p {
     top: 0;
     right: 0;
     width: 100%;
-    padding: 50px;
-    @media only screen and (max-width : 600px) {
-        padding: 14px 20px 20px 60px;
-    }
     z-index: 9999;
     border-bottom: none;
     .company-link {
