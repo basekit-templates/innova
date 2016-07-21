@@ -9,21 +9,21 @@
     overflow: hidden;
     margin: 20px 0;
     @media @tablet {
-        max-height: 300px;
+        max-height: 350px;
     }
     @media @mobile {
-        max-height: 200px;
+        max-height: 250px;
     }
 }
 .slides-list,
 .responsiveslideshow .figure {
     position: relative;
-    min-height: 400px;
+    min-height: 500px;
     @media @tablet {
-        min-height: 300px;
+        min-height: 350px;
     }
     @media @mobile {
-        min-height: 200px;
+        min-height: 250px;
     }
 }
 
@@ -84,6 +84,12 @@
         min-height: initial;
         line-height: 30px;
         font-size: 30px;
+        border: none;
+        &:hover {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
     }
 
     // Control Text
