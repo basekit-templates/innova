@@ -294,10 +294,7 @@ input, textarea, button, .button {
 
 // Form Body
 .form-body {
-    margin: 30px 0;
-    @media @bp-mobile {
-        margin: 20px 0;
-    }
+    margin: 10px 0;
 }
 
 
@@ -441,74 +438,106 @@ textarea,
 // #Twitter Feed
 // -----------------------------
 
-
-// Tweet Item
-// ----------
-
-.responsivecolumns {
-    .avatar {
-        margin-bottom: 20px;
+.twitter .tweet-item {
+    p {
+        padding-bottom: 0;
     }
     .tweet-wrap {
-        width: 100%;
-        padding: 0;
+        max-width: 80%;
     }
-    .tweet-content {
-        word-wrap: break-word;
-        word-break: break-word;
+    .avatar {
+        max-width: 16%;
+        margin-right: 15px;
+        @media @mobile {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
+    .avatar-image {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .tweet-wrap {
+        max-width: 77%;
+        margin-top: -3px;
+        @media @mobile {
+            padding-left: 0;
+            border: none;
+            margin: 0 auto;
+        }
+    }
+    .avatar,
+    .tweet-wrap {
+        display: inline-block;
+        vertical-align: top;
+        @media @mobile {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    .account-link {
+        font-family: @font__h2--font-family;
+        color: @color__primary;
+        font-size: @font__p--font-size;
+        font-weight: @font__p--font-weight;
+        line-height: @font__p--line-height;
+    }
+    .tweet-metadata {
+        font-size: 90%;
+        .timestamp,
+        .via {
+            color: lighten(@color-swatch5, 15%)
+        }
+    }
+    .timestamp {
+        margin-right: 5px;
     }
 }
 
-// Avatar & Tweet Wrap
-// -------------------
-
-// Tweet Wrap
-.tweet-wrap {
-    width: 85%;
-    padding: 0 20px;
-    @media @bp-mobile {
-        width: 100%;
+// Three Columns on Tablet
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right {
+    .twitter .tweet-item {
+        .avatar {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        .tweet-wrap {
+            padding-left: 0;
+            border: none;
+            margin: 0 auto;
+        }
+        .avatar,
+        .tweet-wrap {
+            max-width: 100%;
+            width: 100%;
+        }
     }
 }
 
-
-// Both
-.avatar,
-.tweet-wrap {
-    display: inline-block; // Display element inline
-    vertical-align: top;
-
-    @media @bp-tablet {
-        margin-bottom: 10px;
-        padding: 0 10px;
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .twitter .tweet-item {
+        .avatar {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        .tweet-wrap {
+            padding-left: 0;
+            border: none;
+            margin: 0 auto;
+        }
+        .avatar,
+        .tweet-wrap {
+            max-width: 100%;
+            width: 100%;
+        }
     }
-
-    @media @mobile {
-        padding: 0;
-    }
-}
-
-
-// Account Link (Username)
-// -----------------------
-
-.account-link {
-    padding-bottom: 1px;
-    font-family: @font__h1--font-family;
-
-    &:hover {
-        border-bottom: 2px solid @color-swatch7;
-        text-decoration: none;
-    }
-}
-
-
-// Tweet Metadata
-// --------------
-
-.tweet-metadata {
-    font-size: 12px;
-    color: lighten(@font-swatch5-color,10%);
 }
 
 

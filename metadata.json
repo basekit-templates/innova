@@ -210,7 +210,7 @@
             "font__button--letter-spacing": "@font-swatch7-letter-spacing"
         },
         "slideshow": {
-            "color__slideshow-caption--background": "@color__primary",
+            "color__slideshow-caption--background": "#000000",
             "color__slideshow-title--text": "@color-swatch6",
             "color__slideshow-description--text": "@color-swatch1"
         },

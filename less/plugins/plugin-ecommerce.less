@@ -66,13 +66,20 @@
 .product-item-title,
 .product-item-price {
     text-align: center;
+    font-size: @font__p--font-size;
+    line-height: @font__p--line-height;
+}
 
-    @media only screen
-    and (max-width : 667px) {
-        font-size: @font__p--font-size;
-        line-height: bkscale(@font__p--line-height,0.8);
-        text-align: left;
-    }
+.listing-order {
+    font-size: bkscale(@font__p--font-size,0.9);
+    line-height: bkscale(@font__p--line-height,0.9);
+}
+
+.ecomfeaturedproducts__listing-title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 

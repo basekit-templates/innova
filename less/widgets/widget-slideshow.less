@@ -19,6 +19,7 @@
 .responsiveslideshow .figure {
     position: relative;
     min-height: 500px;
+    background-color: transparent;
     @media @tablet {
         min-height: 350px;
     }
@@ -147,6 +148,7 @@
     }
     // Icon
     &:before {
+        content: '\f04b';
         display: block;
         margin: 0;
         font-size: 14px;
@@ -154,7 +156,7 @@
     }
     // Play Icon
     &.pause:before {
-        content: '\f04b';
+        content: "\f04c";
         color: fade(@color-swatch4,50%);
     }
 }
@@ -170,7 +172,7 @@
     height: 100%;
     margin: 0;
     padding: 30px;
-    background-color: fade(@color__slideshow-caption--background, 50%);
+    background-color: fade(@color__slideshow-caption--background, 30%);
     text-align: center;
 
     @media @tablet {
@@ -200,6 +202,12 @@
         font-size: @font__p--font-size;
         line-height: @font__p--line-height;
         color: @color__slideshow-description--text;
+    }
+
+    .image-title,
+    .image-description {
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
