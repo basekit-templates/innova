@@ -168,9 +168,7 @@
         -webkit-align-self: auto;
         -ms-flex-item-align: auto;
         align-self: auto;
-        .form-group {
-            margin-right: 0;
-        }
+
         .form-group:last-child {
             -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
@@ -382,137 +380,309 @@
 
 
 
-// -----------------------------
-// 2. #Single Product
-// -----------------------------
+// ---------------------------------------
+// 2. #Single Product & 3. #PRODUCT IMAGES
+// ---------------------------------------
 
-// Display images and content inline
-.product-images,
-.product-content {
-    display: inline-block;
-    vertical-align: top;
-}
-
-
-// Product Images
-// --------------
-
-.product-images {
-    width: 45%;
-    margin-right: 3%;
-    @media @bp-tablet {
-        width: 100%;
-        margin-right: 0;
-    }
-}
-
-.product-gallery .image--thumb {
-    max-height: 80px;
-    @media @mobile {
-        max-height: 60px;
-    }
-}
-
-
-// Product Content
-// ---------------
-
-.product-content {
-    width: 51%;
-    @media @bp-tablet {
-        width: 100%;
-    }
-}
-
-// Product Details
-.product-price { font-size: @font__p--font-size; }
-
-
-// Product Form
-// ------------
-
-.ecomproduct__form {
-    margin-top: 20px;
-    background-color: transparent;
-}
-
-
-.ecomproduct__form-group {
-    float: left;
-    margin-right: 30px;
-}
-
-
-.ecomproduct__form-body { margin: 0; }
-
-// Adds extra margin to fieldset at mobile
-.ecomproduct__fieldset {
-    @media @bp-mobile { margin-bottom: 20px;}
-}
-
-
-// Reset legend styles
-.ecomproduct__legend {
-    padding: 0 0 10px;
-    background-color: transparent;
-    border: 0;
-}
-
-
-// Form Select
-.ecomproduct__select {
-    min-width: 377px;
-
-    @media @bp-mobile {
-        min-width: 172px;
-    }
-}
-
-
-// Add to Basket,
-// View Basket Buttons
-.button--submit.ecomproduct__input,
-.ecomproduct__button {
-    min-width: 150px;
-    padding: 11px 30px;
-    text-align: center;
-    font-size: 14px;
-}
-
-
-// product Tags
-.tag-item {
-    margin-right: -4px;
-}
-.tag-item:first-child:before {
-    display: none;
-}
-.tag-item:before {
-    content: ',';
-}
-
-
-// Once product is added
-.form .button {
-    &.added {
-        &:before {
-            content: '\f00c'
+.bk-pt-ecomproduct {
+    .centred-container .container {
+        margin: 0;
+        max-width: 2000px;
+        width: auto;
+        @media @tablet-860px {
+            width: 80%;
+            margin: 0 auto;
         }
     }
+    .template-header {
+        position: absolute;
+        width: 100%;
+        z-index: 9999;
+        @media @tablet-860px {
+            position: relative;
+        }
+    }
+    .page-wrapper {
+        padding-top: 0;
+    }
+    .ecomproduct  .product-content {
+        padding: 150px 50px 50px;
+    }
+} 
+
+
+.ecomproduct {
+
+    &__product-article {
+        background-color: @color__container--background;
+        .flex-display;
+        .justify-content(center);
+
+        @media @tablet-860px {
+            display: block;
+            height: auto;
+        }
+    }
+
+    .product-header,
+    .product-body,
+    .product-attributes {
+        width: 80%;
+    }
+
+
+    &__product-title {
+        margin-bottom: 0;
+        padding-bottom: 4px;
+    }
+
+
+    &__product-price {
+        color: @color__ecomproduct-price--text;
+        font-size: 26px;
+        padding-bottom: 25px;
+    }
+
+
+    &__product-actions {
+        margin: 25px 0 30px;
+    }
+
+
+    &__fieldset {
+        margin-bottom: 15px;
+    }
+
+
+    &__legend {
+        display: none;
+        visibility: hidden;
+    }
+
+
+    &__label {
+        color: darken(@color__form-label--text, 35%);
+    }
+
+
+    &__select-wrap:after {
+        font-size: 18px;
+        right: 5%;
+        top: 50%;
+
+        @media @mobile-650px {
+            right: 22px;
+        }
+    }
+
+
+    &__select-wrap {
+        width: 80%;
+
+        @media @mobile-650px {
+            width: 100%;
+        }
+    }
+
+
+    &__button {
+
+        &.icon--add {
+            width: 80%;
+
+            @media @mobile-650px {
+                width: 100%;
+            }
+        }
+
+        &:before {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+
+    &__view-basket-wrap .button {
+        background-color: fade(@color__button--background, 30%);
+        width: 80%;
+        text-align: center;
+
+        @media @mobile-650px {
+            width: 100%;
+        }
+    }
+
+
+    &__product-attributes {
+        margin: 35px 0 0;
+    }
+
+
+    &__product-attribute-title,
+    &___product-attribute-title,
+    .category-link,
+    .tag-link {
+        font-size: bkscale(@font__p--font-size,0.9);
+        line-height: bkscale(@font__p--line-height,0.9);
+
+    }
+
+
+    &__product-images {
+        background-color: transparent;
+        .flex-display;
+        .align-content(center);
+        .align-items(center);
+        overflow-y: scroll;
+        height: 100vh;         
+        width: 50%;
+
+        @media @tablet-860px {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+
+    &__product-image,
+    &__product-image .image {
+        display: none;
+        visibility: hidden;
+
+        @media @tablet-860px {
+            display: block;
+            margin: 0 auto;
+            max-height: 500px;
+            padding: 10px 0;
+            visibility: visible;
+            width: auto;
+        }
+
+        @media @mobile-650px {
+            padding: 0;
+        }
+    }
+
+
+    &__product-image .image-link {
+        @media @tablet-860px {
+            height: auto;
+            line-height: auto;
+        }
+    }
+
+
+    &__product-gallery {
+        margin: 0;
+        max-height: 100%;
+        width: 100%;
+        position: relative;
+
+        @media @tablet-860px {
+            .flex-display;
+            .justify-content(center);
+            margin: 25px 0 20px;
+        }
+
+        @media @mobile-650px {
+            margin: 15px 0 10px;
+        }
+
+
+        // Product images list element
+        .gallery-item {
+            background-color: transparent;
+            width: 100%;
+            height: auto;
+            line-height: 100%;
+            cursor: pointer;
+            margin-top: -3px;
+
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            @media @tablet-860px {
+                margin: 0 10px;
+                width: auto;
+            }
+
+            @media @mobile-650px {
+                margin-bottom: 10px;
+            }
+        }
+
+
+        // Product image anchor link
+        .image-button {
+            display: block;
+            cursor: default;
+
+            @media @tablet-860px {
+                .flex-display;
+                .align-items(center);
+                height: 100px;
+                width: 100px;
+            }
+
+
+            // Product image
+            .image {
+                max-width: 100%;
+                height: auto;
+                width: 100%;
+
+                @media @tablet-860px {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+
+    &__product-content {
+        .align-self(center);
+        padding: 8%;
+        width: 50%;
+
+        @media @tablet-860px {
+            padding: 40px 30px 30px;
+            width: 100%;
+        }
+    }
+
+    &__product-category,
+    &__tags-title,
+    &__tag-list {
+        line-height: 20px;
+    }
 }
 
 
+// If only one product image is available show the hidden product image section
+.product-one-image .product-images {
+    .justify-content(center);
 
+    .product-image,
+    .product-image .image {
+        display: block;
+        visibility: visible;
+        margin: 0 auto;
+        width: 100%;
 
-// -----------------------------
-// 3. #Product Images
-// -----------------------------
+        @media @tablet-860px {
+            width: auto;
+        }
+    }
 
-// Adds margin to product image div
-.product-item-image,
-.basket-item-image {
-    margin-bottom: 20px;
+    .image-link {
+        line-height: auto;
+        height: auto;
+    }
 }
+
 
 
 

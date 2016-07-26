@@ -3,7 +3,7 @@
     "thumbnail": "thumbnail.png",
     "screenshot": "innova-screenshot.jpg",
     "widgetVersion":2,
-    "pageTypes": ["home"],
+    "pageTypes": ["home", "ecomproduct"],
     "templateType":"standard",
     "images": [
         "images/image-1.jpg",
