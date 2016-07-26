@@ -251,10 +251,40 @@
     }
 }
 
-
 // -----------------------------------
 // Products list in Responsive Columns
 // -----------------------------------
+
+
+// Two Columns
+.columns-two-left,
+.columns-two-right,
+// Three Columns
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right,
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .ecomproductslist .form,// Ecom Form
+    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
+    .ecomproductslist .fieldset--search .form-body,// Ecom Search
+    .ecomproductslist .form-group {
+        display: inline-block;
+        width: 100%;
+        margin-right: 0;
+        .input {
+            margin-bottom: 10px;
+        }
+        .button {
+            text-align: center;
+            margin-bottom: 10px;
+            white-space: normal;
+        }
+    }
+}
 
 .responsivecolumns {
     .ecomproductslist,
@@ -301,6 +331,7 @@
         }
     }
 }
+
 
 // Ecom Clear-Button
 // -----------------
