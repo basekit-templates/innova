@@ -251,39 +251,56 @@
     }
 }
 
-// Responsive Columns
 
-// Two Columns
-.columns-two-left,
-.columns-two-right,
-// Three Columns
-.columns-three-left,
-.columns-three-middle,
-.columns-three-right,
-// Four Columns
-.columns-four-first,
-.columns-four-second,
-.columns-four-third,
-.columns-four-fourth {
-    .ecomproductslist .form,// Ecom Form
-    .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
-    .ecomproductslist .fieldset--search .form-body,// Ecom Search
-    .ecomproductslist .form-group {
-        display: inline-block;
+// -----------------------------------
+// Products list in Responsive Columns
+// -----------------------------------
+
+.responsivecolumns {
+    .ecomproductslist,
+    .ecomfeaturedproducts {
+        .product-item,
+        .products-2 .product-item,
+        .products-4 .product-item {
+            position: relative;
+            width: 48%;
+            margin-bottom: 20px;
+            // Display 100% at mobile
+            @media @mobile {
+                width: 100%;
+            }
+        }
+    }
+    .product-item-image,
+    .product-item-image .image-link {
+        height: 150px;
+        line-height: 150px;
+        @media @mobile {
+            height: 200px;
+            line-height: 200px;
+        }
+    }
+    .product-actions .form .button,
+    .view-basket-wrap .button {
         width: 100%;
-        margin-right: 0;
-        .input {
-            margin-bottom: 10px;
-        }
-        .button {
-            text-align: center;
-            margin-bottom: 10px;
-            padding: 8px 20px;
-            white-space: normal;
-        }
+        margin-bottom: 20px;
+    }
+    .product-item-details {
+        text-align: center;
     }
 }
 
+.responsivecolumns {
+    .ecomproductslist,
+    .ecomfeaturedproducts {
+        // Display 100%
+        .product-item,
+        .ecomfeaturedproducts .products-2 .product-item,
+        .ecomfeaturedproducts .products-4 .product-item {
+            width: 100%;
+        }
+    }
+}
 
 // Ecom Clear-Button
 // -----------------
