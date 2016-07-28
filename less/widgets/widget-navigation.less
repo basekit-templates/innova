@@ -7,44 +7,6 @@
 // #Navigation Overlay
 // --------------------------------
 
-
-// Navigation Body
-// ------------------------------
-
-
-.navigation-body {
-    z-index: -1000;
-    outline: 0;
-    height: 0;
-    width: 0;
-    overflow: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.8s ease;
-    -moz-transition: opacity 0.8s ease;
-    -o-transition: opacity 0.8s ease;
-    transition: opacity 0.8s ease;
-}
-
-// When nav is open
-.widget__extendednavigation.open .navigation-body {
-    display: block;
-    z-index: 10010;
-    opacity: 1;
-    width: auto;
-    overflow: auto;
-    position: fixed;
-    right:0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    opacity: 1;
-
-    @media @mobile {
-        padding-bottom: 45px;
-    }
-}
-
 // Widget Overlay
 .widget__extendednavigation {
     + .widget-overlay {
@@ -71,36 +33,6 @@
             border: 1px solid rgb(0, 148, 136);
             box-shadow: rgba(0, 147, 135, 0.2) 0px 0px 0px 3px inset;
         }
-    }
-}
-
-
-// Open navigation page overlay
-.widget__extendednavigation {
-    &:after {
-        content: "";
-        display: block;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: #000;
-        opacity: 0;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        height: 0;
-        z-index: 10009;
-    }
-
-    &.open:after {
-        height: auto;
-        max-width: @value__container--width;
-        margin: 0 auto;
-        background-color: @color__h1--text;
-        opacity: 1;
     }
 }
 
