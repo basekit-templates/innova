@@ -185,26 +185,25 @@
 // Single Post
 // -----------
 
-.bk-pt-blogpost {
-    .centred-container .container {
-        width: 100%;
-        max-width: inherit;
-        margin: 0 auto;
+.blog-post--has-image {
+    .companyname .company-link {
+        color: @color__companyname--text;
+        &:hover {
+            color: lighten(@color__navigation--text--hover, 30%);
+        }
     }
     .template-header {
         position: absolute;
         width: 100%;
         z-index: 9999;
     }
+    .centred-container .container {
+        width: 100%;
+        max-width: inherit;
+        margin: 0 auto;
+    }
     .page-wrapper {
         padding-top: 0;
-    }
-}
-
-.blog-post--has-image .companyname .company-link {
-    color: @color__companyname--text;
-    &:hover {
-        color: lighten(@color__navigation--text--hover, 30%);
     }
 }
 
