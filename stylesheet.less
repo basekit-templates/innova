@@ -376,11 +376,17 @@ p {
 // Feature Arrow
 // ------------------------------
 
+
 .hero {
     position: relative;
 }
 
 .feature-arrow {
+    display: none;
+}
+
+.bk-pt-home [data-widget-type="feature"] + .template-header + .feature-arrow {
+    display: block;
     position: absolute;
     bottom: 50px;
     right: 50px;
