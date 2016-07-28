@@ -7,8 +7,8 @@
     "templateType":"standard",
     "images": [
         "images/image-1.jpg",
-        "images/logo-default.png",
-        "images/feature.jpg"
+        "images/feature.jpg",
+        "images/logo-default.png"
     ],
     "colorSwatches":
     {
