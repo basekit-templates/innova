@@ -264,6 +264,7 @@ input, textarea, button, .button {
 
 .button {
     .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+    padding: 6px 12px;
 
     color: @color__button--text;
 
@@ -304,9 +305,13 @@ input, textarea, button, .button {
 // ----------
 
 legend {
+    display: inline-block;
     width: 100%;
+    margin-bottom: 15px;
+
     font-size: @font__h2--font-size;
     font-family: @font__h2--font-family;
+    font-weight: @font__h2--font-weight;
     color: @color__form-legend--text;
     letter-spacing: @font__h2--letter-spacing;
 }
@@ -316,9 +321,10 @@ legend {
 // ----------
 
 label {
-    font-family: @font__button--font-family;
-    font-size: @font__button--font-size;
-    color: @color-swatch4;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    line-height: @font__p--line-height;
+    color: @color__p--text;
 }
 
 
