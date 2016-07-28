@@ -186,10 +186,15 @@
     }
 
     .image-title {
-        font-family: @font__h3--font-family;
-        font-size: @font__h3--font-size;
-        line-height: @font__h3--line-height;
+        font-family: @font__h1--font-family;
+        font-size: @font__h1--font-size;
+        line-height: @font__h1--line-height;
         color: @color__slideshow-title--text;
+        padding-bottom: 5px;
+        @media @tablet {
+            font-size: @font__h2--font-size;
+            line-height: @font__h2--line-height;
+        }
         @media @mobile {
             font-size: @font__h4--font-size;
             line-height: @font__h4--line-height;
