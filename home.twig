@@ -2,14 +2,13 @@
 {% block class %}bk-pt-home{% endblock %}
 {% block content %}
 
-    <div class="centred-container">
+    {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
 
-        {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
+    <div class="page-wrapper">
 
         <div class="hero">
 
             <!-- Theme Feature Widget -->
-
             {{widget('feature', 'featurehome', {
                 'header': 'profile',
                 'defaultBgImg': asset("images/feature.jpg"),
@@ -27,31 +26,26 @@
 
         </div>
 
-        <div class="page-wrapper">
+        <!-- Container -->
+        <div class="container">
 
-            <!-- Container -->
-            <div class="container">
+            <!-- Page Content -->
+            <section id="main-scroll" class="template-content">
 
-                <!-- Page Content -->
-                <section id="main-scroll" class="template-content">
+                <!-- Main Widget Zone -->
+                {{zone('main')|raw}}
 
+                <!-- Footer Text Widget -->
+                {% include "includes/footer.twig" %}
 
-                    <!-- Main Widget Zone -->
-                    {{zone('main')|raw}}
-
-                    <!-- Footer Text Widget -->
-                    {% include "includes/footer.twig" %}
-
-                </section>
-                <!-- End Page Content -->
-
-            </div>
-            <!-- End Container -->
+            </section>
+            <!-- End Page Content -->
 
         </div>
-        <!-- End Page Wrapper -->
+        <!-- End Container -->
 
-    </div>
+    </div><!-- End Page Wrapper -->
+
 
 {% endblock %}
 
@@ -73,6 +67,30 @@
             }
           });
         });
+
+    </script>
+
+    <script>
+
+        var publishedmode = true;
+
+        if($("body.edit-mode").length > 0) {
+           publishedmode = false;
+        }
+
+        $(document).ready(function(){
+           if ( $(".company-info .widget").hasClass("bk-tpl-hidden") ) {
+               $("body").addClass("logo-is-hidden");
+           }
+        });
+
+        if(publishedmode==true) {
+           $(document).ready(function(){
+               if ( $(".company-info .bk-logo").hasClass("logo") === false ) {
+                   $("body").addClass("logo-is-hidden");
+               }
+           });
+        }
 
     </script>
 

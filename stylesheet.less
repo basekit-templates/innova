@@ -107,48 +107,33 @@ p {
 
 
 
-// Wrapping container
-.container {
-    max-width: 1200px;
-    margin: 0 auto 0 160px;
-    width: 80%;
-
-    @media @bp-tablet {
-        margin: 0 auto 0 100px;
-    }
-    @media @bp-mobile {
-        margin: 0 auto;
-        width: 90%;
-    }
-}
-
 
 // Centre container for homepage
-.centred-container {
-    .page-wrapper {
-        margin-left: 60px;
-    }
-    .container {
+.container {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    @media @bp-tablet {
         margin: 0 auto;
     }
-    @media @bp-tablet {
-        .page-wrapper {
-            margin-left: 60px;
-        }
-        .container {
-            margin: 0 auto;
-        }
-    }
     @media @bp-mobile {
-        .page-wrapper {
-            margin-left: 0;
-        }
-        .container {
-            margin: 0 auto;
-        }
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
+[data-widget-type="extendednavigation"] + .hero,
+[data-widget-type="extendednavigation"] + .page-wrapper {
+    margin-left: 60px;
+    @media @bp-mobile {
+        margin-left: 0;
+    }
+}
+
+.bk-tpl-hidden[data-widget-type="extendednavigation"] + .hero,
+.bk-tpl-hidden[data-widget-type="extendednavigation"] + .page-wrapper {
+    margin-left: 0 !important;
+}
 
 // Stops mobile scrolling of the body - only the nav is scrollable
 .noscroll {
@@ -156,14 +141,11 @@ p {
 }
 
 
+
+
 // -----------------------------
 // Page Layout
 // -----------------------------
-
-.page-wrapper {
-    padding-top: 12px;
-
-}
 
 .home-copy {
     margin-bottom: 100px;
@@ -193,10 +175,6 @@ p {
 // -----------------------------
 
 .feature {
-    margin-left: 60px;
-    @media @bp-mobile {
-        margin-left: 0;
-    }
     .background-image,
     .content-wrap {
         @media only screen and (min-width: 1025px) {

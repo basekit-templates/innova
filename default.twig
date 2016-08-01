@@ -3,36 +3,32 @@
 {% block class %}bk-pt-default{% endblock %}
 {% block content %}
 
-    <div class="centred-container">
+{{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
 
-        {{widget('extendednavigation', 'navigation', {"align":"left"})|raw}}
+<div class="page-wrapper">
 
-         {% include "includes/header.twig" %}
+    {% include "includes/header.twig" %}
 
-        <div class="page-wrapper">
+    <!-- Container -->
+    <div class="container">
 
-            <!-- Container -->
-            <div class="container">
-
-                <!-- Page Content -->
-                <section class="template-content">
+        <!-- Page Content -->
+        <section class="template-content">
 
 
-                    <!-- Main Widget Zone -->
-                    {{zone('main')|raw}}
+            <!-- Main Widget Zone -->
+            {{zone('main')|raw}}
 
-                    <!-- Footer Text Widget -->
-                    {% include "includes/footer.twig" %}
+            <!-- Footer Text Widget -->
+            {% include "includes/footer.twig" %}
 
-                </section>
-                <!-- End Page Content -->
-
-            </div>
-            <!-- End Container -->
-
-        </div>
-        <!-- End Page Wrapper -->
+        </section>
+        <!-- End Page Content -->
 
     </div>
+    <!-- End Container -->
+
+</div>
+<!-- End Page Wrapper -->
 
 {% endblock %}
