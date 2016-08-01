@@ -76,11 +76,21 @@
 
 [data-widget-type="logo"],
 [data-widget-type="companyname"] {
-    width: 100%;
+    margin: 0 0 0 auto;
+}
+
+[data-widget-type="logo"] {
+    margin-bottom: 10px;
+}
+
+[data-widget-type="logo"] + [data-widget-type="companyname"] {
+    margin-bottom: 10px;
+    .company-link {
+        margin-left: 10px;
+    }
 }
 
 .logo {
-    margin-right: 10px;
     line-height: 0;
 }
 
