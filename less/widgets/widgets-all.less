@@ -121,16 +121,22 @@
 // ------------
 
 // Title
-.image-title {
-    font-family: @font__h3--font-family;
+.imagewidget .image-title {
+    color: @color__h4--text;
+    font-family: @font__h4--font-family;
+    font-size: @font__h4--font-size;
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h4--line-height;
+    letter-spacing: @font__h4--letter-spacing;
 }
 
-.imagewidget {
-    .image-title,
-    .image-description {
-        color: @font-swatch5-color;
-        text-shadow: none;
-    }
+.imagewidget .image-description {
+    color: @color__p--text;
+    font-family: @font__p--font-family;
+    font-size: bkscale(@font__p--font-size,0.9);
+    line-height: bkscale(@font__p--line-height,0.9);
+    font-weight: @font__p--font-weight;
+    letter-spacing: @font__p--letter-spacing;
 }
 
 
@@ -227,8 +233,8 @@
 
 .gallery__image-description {
     width: 100%;
-    font-size: @font__p--font-size;
-    line-height: @font__p--line-height;
+    font-size: bkscale(@font__p--font-size,0.9);
+    line-height: bkscale(@font__p--line-height,0.9);
     color: @color__gallery-description--text;
     text-align: center;
     .transition( all, 0.5s, ease );
