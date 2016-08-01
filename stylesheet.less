@@ -174,6 +174,31 @@ p {
 // Feature
 // -----------------------------
 
+.content-inner-wrap {
+    max-width: 67%;
+    padding: 37px 50px;
+    @media only screen and (max-width : 1024px) {
+        padding: 60px 0 20px;
+    }
+    @media @bp-mobile {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.logo-is-hidden .content-inner-wrap {
+    @media only screen and (max-width : 1024px) {
+        max-width: inherit;
+        width: 80%;
+        margin: 0 auto;
+    }
+    @media @bp-mobile {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
 .feature {
     .background-image,
     .content-wrap {
@@ -203,20 +228,10 @@ p {
             opacity: 0.4;
         }
     }
-    .content-inner-wrap {
-        max-width: 67%;
-        padding: 37px 50px;
-        @media only screen and (max-width : 1024px) {
-            max-width: 100%;
-            padding: 37px 20px;
-        }
-        @media @bp-mobile {
-            padding: 0 20px;
-        }
-    }
     .content-wrap {
         position: relative;
         width: 100%;
+        padding: 0;
         vertical-align: middle;
         display: table-cell;
         z-index: 99;
