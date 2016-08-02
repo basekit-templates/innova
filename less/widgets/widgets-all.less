@@ -347,7 +347,6 @@ legend {
     letter-spacing: @font__h2--letter-spacing;
 }
 
-
 // Label
 // ----------
 
@@ -357,7 +356,6 @@ label {
     line-height: @font__p--line-height;
     color: @color__p--text;
 }
-
 
 // Select
 // ----------
@@ -450,6 +448,77 @@ textarea,
         width: auto;
     }
 }
+
+// -----------------------------
+// Signup and Blog Search
+// -----------------------------
+
+.signupform__legend,
+.blogsearch__legend {
+    display: none;
+}
+
+.signupform__label,
+.blogsearch__label {
+    padding-bottom: 5px;
+}
+
+.signupform .form-body,
+.blogsearch .form-body {
+    @media only screen and (min-width : 500px) {
+        .flex-display;
+        .justify-content(space-between);
+        .flex-wrap(nowrap);
+        .align-items(flex-end);
+        .align-content(stretch);
+
+        .form-group {
+            -webkit-box-ordinal-group: 1;
+            -moz-box-ordinal-group: 1;
+            -webkit-order: 0;
+            -ms-flex-order: 0;
+            order: 0;
+            -webkit-box-flex: 0;
+            -moz-box-flex: 0;
+            -webkit-flex: 0 1 auto;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            -webkit-align-self: auto;
+            -ms-flex-item-align: auto;
+            align-self: auto;
+            .input {
+                width: 100%;
+                min-height: 44px;
+            }
+            .select {
+                height: 44px;
+            }
+        }
+
+        .form-group:first-child {
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            margin-right: 5px;
+        }
+
+        .form-group:last-child .button {
+            white-space: nowrap;
+            @media @mobile {
+                white-space: normal;
+            }
+        }
+    }
+}
+
+.responsivecolumns {
+    .signupform .form-body,
+    .blogsearch .form-body {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
 
 // -----------------------------
 // #Social Icons
