@@ -419,6 +419,7 @@ textarea,
     // Padding is set in stylesheet.less
     resize: none;
     background-color: transparent;
+    border: 2px solid fade(@color__button--border, 8%);
     &:focus {
         border-color: @color__primary;
         box-shadow: none;
@@ -491,10 +492,10 @@ textarea,
                 width: 100%;
                 min-height: 44px;
                 border: none;
-                border-bottom: 1px solid darken(@color-swatch1, 20%);
+                border-bottom: 2px solid fade(@color__button--border, 8%);
                 padding-left: 0;
                 &:focus {
-                    border-bottom: 1px solid @color__primary;
+                    border-bottom: 2px solid @color__button--border;
                 }
             }
             .select {
