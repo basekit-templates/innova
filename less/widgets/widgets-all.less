@@ -490,6 +490,12 @@ textarea,
             .input {
                 width: 100%;
                 min-height: 44px;
+                border: none;
+                border-bottom: 1px solid darken(@color-swatch1, 20%);
+                padding-left: 0;
+                &:focus {
+                    border-bottom: 1px solid @color__primary;
+                }
             }
             .select {
                 height: 44px;
@@ -709,7 +715,7 @@ textarea,
 
 hr,
 hr.rule {
-    background-color: darken(@color-swatch1, 30%);
+    background-color: darken(@color-swatch1, 20%);
     height: 1px;
 }
 
