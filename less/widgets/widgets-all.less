@@ -387,6 +387,7 @@ label {
     color: @color-swatch7;
     font-size: bkscale(@font__p--font-size, 0.9);
     border-radius: 0;
+    border: 2px solid fade(@color__button--border, 8%);
     background-color: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -398,6 +399,7 @@ label {
 
     &:hover, &:focus {
         background-color: transparent;
+        border: 2px solid @color__button--border;
     }
 
 }
@@ -421,7 +423,7 @@ textarea,
     background-color: transparent;
     border: 2px solid fade(@color__button--border, 8%);
     &:focus {
-        border-color: @color__primary;
+        border-bottom: 2px solid @color__button--border;
         box-shadow: none;
     }
 
@@ -434,7 +436,7 @@ textarea,
 
 .product-filters .input--search {
     background-color: transparent;
-    border: 1px solid #cccccc;
+    border: 2px solid fade(@color__button--border, 8%);
 }
 
 .advancedcontactform {
