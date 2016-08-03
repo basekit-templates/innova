@@ -339,7 +339,7 @@ p {
     .button {
         width: auto;
         margin: 10px 0;
-        border: 2px solid @color__feature-button--border;
+        border: 2px solid fade(@color__feature-button--border, 60%);
         font-size: 18px;
         line-height: 28px;
         color: @color__feature-button--text;
@@ -347,7 +347,7 @@ p {
         text-align: left;
     }
     .button:hover {
-        border: 2px solid fade(@color__feature-button--border, 60%);
+        border: 2px solid @color__feature-button--border;
         color: fade(@color__feature-button--text, 60%);
         background-color: transparent;
     }

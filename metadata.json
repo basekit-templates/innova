@@ -15,7 +15,7 @@
         "Swatch 1": {
             "color1":"#f2f2f2",
             "color2":"#00052E",
-            "color3":"#00052E",
+            "color3":"#022aa2",
             "color4":"#00052E",
             "color5":"#898888",
             "color6":"#ffffff",
@@ -80,7 +80,7 @@
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "28px",
-            "color": "@color-swatch3",
+            "color": "@color-swatch4",
             "letter-spacing": "0px",
             "background-color": "@color-swatch1",
             "background-color-hover":  "@color-swatch1"
@@ -206,7 +206,7 @@
             "color__button--background": "@font-swatch7-background-color",
             "color__button--background--hover": "@font-swatch7-background-color-hover",
             "color__button--text": "@font-swatch7-color",
-            "color__button--border": "@color-swatch2",
+            "color__button--border": "@color-swatch3",
 
             "font__button--font-family": "@font-swatch7-font-family",
             "font__button--font-size": "@font-swatch7-font-size",
