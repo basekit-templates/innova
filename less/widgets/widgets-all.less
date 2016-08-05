@@ -319,6 +319,20 @@ input, textarea, button, .button {
 }
 
 
+//  Register and Login buttons
+//  --------------------------
+
+button.userregistrationbtn,
+button.userloginbtn {
+    .transition(@duration:0.2s, @ease:ease-in-out); // Mixin
+    padding: 6px 12px;
+    background-color: @color__button--background;
+    border: 2px solid fade(@color__button--border, 35%);
+    &:hover {
+        background-color: @color__button--background--hover;
+        border: 2px solid @color__button--border;
+    }
+}
 
 
 // -----------------------------
