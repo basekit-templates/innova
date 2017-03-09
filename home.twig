@@ -51,7 +51,7 @@
 
 {% block scripts %}
 
-    <script>
+    <script nonce="{{ numberUsedOnce }}">
         $(function() {
           // This should prevent problems with carousel, scrollspy, etc...
           $('.feature-arrow-link').click(function() {
@@ -71,7 +71,7 @@
     </script>
 
     
-    <script>
+    <script nonce="{{ numberUsedOnce }}">
     	// Adds a class when logo is hidden
         var publishedmode = true;
 
