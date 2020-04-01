@@ -1,0 +1,111 @@
+
+// -----------------------------
+// Migration Styles
+// -----------------------------
+
+
+#migrated-site {
+
+
+    // Stylesheet overrides
+    // -----------------------------
+    
+    
+    .container {
+        margin-top: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    
+    [data-name="row"] .slides-list {
+        margin: 0;
+    }
+    
+    [data-name="row"] [data-name="socialicons"] .social-link {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        width: 30px;
+        
+        &:before {
+            margin-right: 0;
+        }
+    }
+
+
+    .template-footer {
+        float: none;
+    }
+    
+    
+    .row-overlay button {
+        min-height: auto;
+    }
+    
+
+    .row-overlay::before {
+       left: -60px; 
+    }
+    
+
+    .row-overlay__edit-control {
+        left: 0;
+    }
+
+
+    // Hides fixed nav when in row edit mode on mobile
+    .row-editing {
+
+        @media @tablet {
+            [data-widget-type="extendednavigation"] {
+                display: none;
+            }
+
+            .page-wrapper {
+                margin-left: 0;
+            }
+        }
+    }
+
+
+    // Migration styles
+    // -----------------------------
+    
+    
+    // Applies spacing to widgets to mimic container width
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    .row:not(.row--width-no-padding) .row__container,
+    .template-footer {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        width: 80%;
+        
+        @media @tablet {
+            width: 90%;
+        }
+    }
+    
+    
+    // Adds spacing to a section when a widget follows it
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
+    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 50px;
+
+        @media @mobile {
+            margin-top: 20px;
+        }
+    }
+
+    
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 50px;
+    }
+}
